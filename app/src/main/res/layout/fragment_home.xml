@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".ui.home.HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="80dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewCircleWithStroke"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.SelectedCornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="-35dp"
+                tools:src="@drawable/img_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewCircleWithStrokeOverlay"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.SelectedCornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="-35dp"
+                android:src="@color/black"
+                android:alpha="0.55"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="75dp"
+                android:layout_marginBottom="-35dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewCircleWithStroke"
+                app:layout_constraintEnd_toEndOf="@id/guideLineHald"
+                >
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@drawable/img_profile"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                tools:text="Barry Koeghan"
+                android:textColor="@color/black"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViewProfile"
+                />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/gray_five"
+                tools:text="Ini deskripsi yang cukup panjang dan melewati satu baris ya."
+                android:layout_marginTop="1dp"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineHald"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:orientation="vertical"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHobby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    >
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivHobby"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="16dp"
+                        app:shapeAppearanceOverlay="@style/shapeNew"
+                        android:src="@drawable/img_hobby"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/ivHobby"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toTopOf="@id/tvHobby"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="italic"
+                        android:text="Hobby"
+                        />
+                    <TextView
+                        android:id="@+id/tvHobby"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/ivHobby"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ivHobby"
+                        app:layout_constraintBottom_toBottomOf="@id/ivHobby"
+                        android:layout_marginHorizontal="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        tools:text="Programming"
+                        android:fontFamily="@font/poppins_bold"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMakes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardHobby"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMakes1"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivMakes1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="12dp"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            tools:src="@tools:sample/avatars"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMakes1"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            tools:text="Nasi Goreng"
+                            app:layout_constraintTop_toBottomOf="@id/ivMakes1"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMakes2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivMakes2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="12dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            tools:src="@tools:sample/avatars"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMakes2"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            tools:text="Hamburger"
+                            app:layout_constraintTop_toBottomOf="@id/ivMakes2"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMakes3"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivMakes3"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="12dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            tools:src="@tools:sample/avatars"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMakes3"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            tools:text="Gulai Sapi"
+                            app:layout_constraintTop_toBottomOf="@id/ivMakes3"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMikes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardMakes"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMikes1"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivMikes1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="12dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            tools:src="@tools:sample/avatars"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMikes1"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            tools:text="Boba Taro"
+                            app:layout_constraintTop_toBottomOf="@id/ivMikes1"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMikes2"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivMikes2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_margin="12dp"
+                            app:shapeAppearanceOverlay="@style/circleImageView"
+                            tools:src="@tools:sample/avatars"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMikes2"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="8dp"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            tools:text="Hamburger"
+                            app:layout_constraintTop_toBottomOf="@id/ivMikes2"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardMikes"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    >
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivInterest"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="16dp"
+                        app:shapeAppearanceOverlay="@style/shapeNew"
+                        android:src="@drawable/img_interest"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/ivInterest"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toTopOf="@id/tvInterest"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="italic"
+                        android:text="Interest"
+                        />
+                    <TextView
+                        android:id="@+id/tvInterest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/ivInterest"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ivInterest"
+                        app:layout_constraintBottom_toBottomOf="@id/ivInterest"
+                        android:layout_marginHorizontal="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        tools:text="Technology"
+                        android:fontFamily="@font/poppins_bold"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCitaCita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardInterest"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    >
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivCitaCita"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginEnd="16dp"
+                        app:shapeAppearanceOverlay="@style/shapeNew"
+                        android:src="@drawable/img_citacita"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@id/ivCitaCita"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toTopOf="@id/tvCitaCita"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="italic"
+                        android:text="Cita Cita"
+                        />
+                    <TextView
+                        android:id="@+id/tvCitaCita"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@id/ivCitaCita"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ivCitaCita"
+                        app:layout_constraintBottom_toBottomOf="@id/ivCitaCita"
+                        android:layout_marginHorizontal="16dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        tools:text="Software Programmer"
+                        android:fontFamily="@font/poppins_bold"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

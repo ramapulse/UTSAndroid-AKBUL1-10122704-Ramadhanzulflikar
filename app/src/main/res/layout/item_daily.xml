@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/gray_one"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivDaily"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RectangleCornerRadius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            tools:src="@drawable/img_hobby"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/ivDaily"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivDaily"
+            app:layout_constraintBottom_toBottomOf="@id/ivDaily"
+            android:layout_marginStart="12dp"
+            >
+            <TextView
+                android:id="@+id/tvDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Memasak"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tvDailyDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                tools:text="Membantu keluarga memasak."
+                android:includeFontPadding="false"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/gray_five"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

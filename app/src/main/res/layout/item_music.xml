@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/black"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/tvMusic"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RectangleCornerRadius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/baseline_library_music_24"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/tvMusic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvMusic"
+            app:layout_constraintBottom_toBottomOf="@id/tvMusic"
+            android:layout_marginStart="12dp"
+            >
+            <TextView
+                android:id="@+id/tvDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Judul Music"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/tvDailyDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                tools:text="Sabrina Carpenter"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/gray_one"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnPlay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/btnStop"
+            android:src="@drawable/baseline_play_circle_24"
+            />
+
+        <ImageView
+            android:id="@+id/btnStop"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/baseline_stop_circle_24"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
